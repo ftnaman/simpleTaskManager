@@ -120,3 +120,14 @@ body {
     font-size: 1.3rem;
   }
 }
+
+#footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2b6777; /* You can choose any color */
+    color: white;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
