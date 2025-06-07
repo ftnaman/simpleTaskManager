@@ -46,3 +46,13 @@ function loadTasks(){
         createTaskElement(task);
     });
 }
+
+function removeTaskFromStorage(taskText) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const index = tasks.indexOf(taskText);
+    if (index !== -1) {
+        tasks.splice(index, 1);
+    }
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
