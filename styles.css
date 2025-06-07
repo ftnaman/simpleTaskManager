@@ -1,54 +1,60 @@
-/* General body and font setup */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f7f8;
-  margin: 0;
-  padding: 20px;
+  background-color: #f4f6f8;
+  color: #2b6777;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
   min-height: 100vh;
 }
 
-/* Title container */
 .starting {
   margin-bottom: 30px;
 }
 
 #appName {
-  font-size: 3rem;
+  font-size: 2.5rem; 
+  font-weight: bold;
   color: #2b6777;
   text-align: center;
 }
 
-/* Input container styling */
 #inputTaking {
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 600px;
 }
 
 #inputTask {
-  width: 300px;
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  border: 2px solid #52ab98;
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: 2px solid #2b6777;
   border-radius: 8px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 #inputTask:focus {
-  border-color: #2b6777;
+  border-color: #52ab98;
 }
 
-/* Button styling */
 #submitBtn {
   background-color: #52ab98;
   border: none;
   color: white;
-  padding: 10px 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  padding: 12px 25px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -58,49 +64,59 @@ body {
   background-color: #2b6777;
 }
 
-/* Current tasks header */
 .general {
-  color: #2b6777;
+  font-size: 1.5rem;
   margin-bottom: 15px;
-  font-weight: normal;
+  max-width: 600px;
+  width: 100%;
+  text-align: left;
 }
 
-/* Task container and individual tasks */
 #taskContainer {
-  width: 360px;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .task-class {
   background-color: white;
   padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgb(43 103 119 / 0.2);
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease;
 }
 
 .task-class:hover {
-  background-color: #e0f2f1;
+  background-color: #e1f0ef;
 }
 
-/* The cutout style for clicked tasks */
-.cutout {
-  text-decoration: line-through;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-}
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 15px 10px;
+  }
 
-#footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #2b6777; /* You can choose any color */
-    color: white;
-    font-family: Arial, sans-serif;
-    position: fixed;
-    bottom: 0;
+  #appName {
+    font-size: 2rem; 
+  }
+
+  #inputTaking {
+    flex-direction: column;
+  }
+
+  #inputTask, #submitBtn {
     width: 100%;
+    font-size: 1rem;
+  }
+
+  #submitBtn {
+    margin-top: 10px;
+  }
+
+  .general {
+    font-size: 1.3rem;
+  }
 }
