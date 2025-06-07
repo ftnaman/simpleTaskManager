@@ -1,10 +1,11 @@
-
+/* Basic reset & box-sizing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Body and general font */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f6f8;
@@ -14,19 +15,22 @@ body {
   align-items: center;
   padding: 20px;
   min-height: 100vh;
+  position: relative;
 }
 
+/* App title */
 .starting {
   margin-bottom: 30px;
 }
 
 #appName {
-  font-size: 2.5rem; 
+  font-size: 2.5rem; /* 40px approx */
   font-weight: bold;
   color: #2b6777;
   text-align: center;
 }
 
+/* Input area container */
 #inputTaking {
   display: flex;
   gap: 10px;
@@ -35,6 +39,7 @@ body {
   max-width: 600px;
 }
 
+/* Input field */
 #inputTask {
   flex-grow: 1;
   padding: 12px 15px;
@@ -49,6 +54,7 @@ body {
   border-color: #52ab98;
 }
 
+/* Add task button */
 #submitBtn {
   background-color: #52ab98;
   border: none;
@@ -64,6 +70,7 @@ body {
   background-color: #2b6777;
 }
 
+/* Tasks header */
 .general {
   font-size: 1.5rem;
   margin-bottom: 15px;
@@ -72,6 +79,7 @@ body {
   text-align: left;
 }
 
+/* Task container */
 #taskContainer {
   width: 100%;
   max-width: 600px;
@@ -80,6 +88,7 @@ body {
   gap: 10px;
 }
 
+/* Each task card */
 .task-class {
   background-color: white;
   padding: 15px 20px;
@@ -87,20 +96,40 @@ body {
   box-shadow: 0 2px 6px rgb(43 103 119 / 0.2);
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
+/* Hover effect for task */
 .task-class:hover {
   background-color: #e1f0ef;
 }
 
+/* Cutout effect for completed task */
+.cutout {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Footer styling */
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background-color: #2b6777;
+  color: #ffffff;
+  font-size: 1rem;
+  position: relative;
+}
+
+/* Responsive: for screens 480px or less */
 @media only screen and (max-width: 480px) {
   body {
     padding: 15px 10px;
   }
 
   #appName {
-    font-size: 2rem; 
+    font-size: 2rem; /* smaller on phone */
   }
 
   #inputTaking {
@@ -119,15 +148,4 @@ body {
   .general {
     font-size: 1.3rem;
   }
-}
-
-#footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #2b6777; /* You can choose any color */
-    color: white;
-    font-family: Arial, sans-serif;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
